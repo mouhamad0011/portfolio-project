@@ -1,0 +1,41 @@
+.contaa{
+    background-image: linear-gradient(-45deg,#22283177,#222831);
+} 
+ h1{
+    color:white ;
+    justify-content: center;
+    text-align: center;
+}
+span{
+    color:#68E0CF
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.image-item {
+    text-align: center;
+    margin: 50px;
+   
+    
+
+}
+
+.image-item img {
+    width:50px;
+    height: 50px; 
+    background-color: white;
+    border-radius: 100px;
+    border-width: 500px;
+    
+}
+
+.image-item p {
+    margin-top: 5px;
+    font-size: 18px;
+    color:white;
+}
