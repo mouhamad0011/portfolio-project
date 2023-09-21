@@ -39,3 +39,37 @@ span{
     font-size: 18px;
     color:white;
 }
+
+
+
+@media (max-width: 768px) {
+    .contaa {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center; 
+    }
+
+    .image-item {
+        text-align: center;
+        margin: 30px;
+    }
+
+    .image-item img {
+        width: 100px; 
+        height: 100px;
+        border-radius: 50%; 
+    }
+
+    .image-item p {
+        font-size: 14px; 
+        margin-top: 10px; 
+    }
+}
