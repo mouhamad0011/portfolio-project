@@ -1,0 +1,278 @@
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    background-color: #555;
+}
+.dropdown-content a:hover{
+    background-color: #333;
+}
+
+.dropdown-content {
+    display: none;
+    padding-left: 25px;
+}
+
+
+.active {
+    background-color: #555;
+}
+
+
+.content {
+    margin-left: 250px; 
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+.Education{
+    display: none;
+}
+#education-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+#education-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#education-list li:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+
+#add-education-form {
+    margin-top: 20px;
+}
+
+#add-education-form input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 2px solid black;
+}
+
+#add-education-form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#add-education-form button:hover {
+    background-color: #555;
+}
+
+
+#experience-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+#experience-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#experience-list li:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+
+#add-experience-form {
+    margin-top: 20px;
+}
+
+#add-experience-form input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 0;
+    border-bottom:2px solid black;
+}
+textarea{
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 0;
+    border-bottom:2px solid black;
+}
+#add-experience-form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#add-experience-form button:hover {
+    background-color: #555;
+}
+.Experience{
+    display: none;
+}
+
+
+.Projects {
+    display: none;
+}
+
+.Projects h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#projects-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#projects-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#projects-list li:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+
+#add-project-form {
+    margin-top: 20px;
+}
+
+#add-project-form input[type="text"],
+#add-project-form input[type="file"],
+#add-project-form textarea {
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 2px solid black;
+}
+
+#add-project-form textarea {
+    resize: vertical; 
+}
+
+#add-project-form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#add-project-form button:hover {
+    background-color: #555;
+}
+
+
+
+
+
+
+/* about main div*/
+.About{
+    display: flex;
+    
+    flex-direction: column;
+}
+.About h2{
+    color: #555;
+}
+.imgcontainer{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: -12px -12px 2px 1px #9e9d9d;
+}
+.imgcontainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 190px;
+    height: 220px;
+}
+
+/* Style for the image */
+.imgcontainer img {
+    width: 190px;
+    height: 220px;
+}
+
+/* Style for the plus icon */
+.imgcontainer .fa-plus {
+    position: absolute;
+            bottom: 10px; /* Adjust the distance from the bottom as needed */
+            right: 10px; /* Adjust the distance from the right as needed */
+            font-size: 24px; /* Adjust the font size as needed */
+            color: white; /* Adjust the icon color as needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Background color for the icon (semi-transparent black) */
+            padding: 5px;
+            border-radius: 50%; /* Makes the icon circular */
+            cursor: pointer;
+}
+.description{
+    width: 50%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: #9e9d9d;
+}
+.description p{
+    padding: 30px;
+}

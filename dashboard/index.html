@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Menu with Dropdown</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <a href="#" class="active">Dashboard</a>
+    <a href="#">About</a>
+    <div class="dropdown-content">
+        <a href="#">- photo</a>
+        <a href="#">- description</a>
+    </div>
+    <a href="#">Education</a>
+    <div class="dropdown-content">
+        <a href="#">- degree</a>
+        <a href="#">- date</a>
+        <a href="#">- place</a>
+    </div>
+    <a href="#">Experience</a>
+    <div class="dropdown-content">
+        <a href="#">- position</a>
+        <a href="#">- description</a>
+        <a href="#">- date</a>
+        <a href="#">- place</a>
+    </div>
+    <a href="#">Skills</a>
+    <div class="dropdown-content">
+        <a href="#">- skill image</a>
+        <a href="#">- skill name</a>
+    </div>
+    <a href="#">Projects</a>
+    <div class="dropdown-content">
+        <a href="#">- photo</a>
+        <a href="#">- description</a>
+    </div>
+</div>
+<div class="content">
+    <div class="Education">
+        <h1>Educations</h1>
+        <ul id="education-list">
+            <li>Bachelor of Science in Mechanical Engineering, June 2017, Lebanese International University&nbsp;&nbsp;<i class="fa-solid fa-trash-can fa-lg delete"></i></li>
+            <li>Master of Science in Mechanical Engineering, June 2019, Lebanese International University&nbsp;&nbsp;<i class="fa-solid fa-trash-can fa-lg delete"></i></li>
+            <li>Full-Stack Web developer, June 2023, Codi&nbsp;&nbsp;<i class="fa-solid fa-trash-can fa-lg delete"></i></li>
+        </ul>
+
+        <!-- Form to add new education -->
+        <h2>Add New Education</h2>
+        <form id="add-education-form">
+            <input type="text" placeholder="Degree" id="degree">
+            <input type="text" placeholder="Date" id="date">
+            <input type="text" placeholder="Place" id="place">
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <div class="Experience">
+        <h1>Experience</h1>
+        <ul id="experience-list">
+            <li>Full-Stack Web Developer, Nov. 2022 – June 2023, Codi / Beirut, Lebanon&nbsp;&nbsp;<i class="fa-solid fa-trash-can fa-lg delete"></i></li>
+            <li>Site Engineer | Project Manager, Sep. 2017 - Jan. 2019, Premium Construction and Engineering / Beirut, Lebanon&nbsp;&nbsp;<i class="fa-solid fa-trash-can fa-lg delete"></i></li>
+        </ul>
+
+        <h2>Add New Experience</h2>
+        <form id="add-experience-form">
+            <input type="text" placeholder="Position" id="position">
+            <textarea name="description" id="description"  placeholder="Description"></textarea>
+            <input type="text" placeholder="Date" id="exp-date">
+            <input type="text" placeholder="Place" id="exp-place">
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <div class="Projects">
+        <h1>Projects</h1>
+        <ul id="projects-list">
+            <li>Meshwar عاللبناني | MERN Stack Project | Meshwar عاللبناني&nbsp;&nbsp;<i class="fa-solid fa-trash-can fa-lg delete"></i></li>
+            <li>Zone Outlet | MERN Stack Project | ZoneOutlet00&nbsp;&nbsp;<i class="fa-solid fa-trash-can fa-lg delete"></i></li>
+        </ul>
+    
+        <h2>Add New Project</h2>
+        <form id="add-project-form">
+            <input type="text" placeholder="Project Name" id="project-name">
+            <input type="file" name="" id="">
+            <textarea name="description" id="project-description"  placeholder="Project Description"></textarea>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <div class="About">
+            <h2>About</h2>
+            <div class="imgcontainer">
+                <img src="https://image.shutterstock.com/image-vector/dotted-spiral-vortex-royaltyfree-images-600w-2227567913.jpg" class="picture"/>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="description">
+                <p>As a recent graduate with a passion for Full Stack Web Development,
+                 I am eager to launch my career in this exciting field. 
+                Through my studies and practical experience, I have gained a deep understanding 
+                of the full stack web development process and am skilled in creating dynamic,
+                 user-friendly web applications. I have experience collaborating with teams, 
+                 working under tight deadlines, and delivering projects to a high standard.</p>
+            </div>
+    </div>
+</div>
+
+
+
+<script>
+    // JavaScript for dropdown functionality
+    const dropdownLinks = document.querySelectorAll('.sidebar .dropdown-content');
+    const contentSections = document.querySelectorAll('.content > div');
+
+    for (const link of dropdownLinks) {
+        link.previousElementSibling.addEventListener('click', function () {
+            // Hide all content sections
+            contentSections.forEach((section) => {
+                section.style.display = 'none';
+            });
+
+            link.style.display = link.style.display === 'block' ? 'none' : 'block';
+            const sectionClassName = link.previousElementSibling.textContent.trim();
+            const section = document.querySelector(`.${sectionClassName}`);
+            if (section) {
+                section.style.display = 'block';
+            }
+        });
+    }
+    // JavaScript to handle adding new education
+    const educationList = document.getElementById('education-list');
+    const addEducationForm = document.getElementById('add-education-form');
+
+    addEducationForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const degree = document.getElementById('degree').value;
+        const date = document.getElementById('date').value;
+        const place = document.getElementById('place').value;
+
+        // Create a new list item for the education and append it to the education list
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${degree}, ${date}, ${place} <i class="fa-solid fa-trash-can fa-lg delete"></i>`;
+        educationList.appendChild(listItem);
+
+        // Clear the form inputs
+        document.getElementById('degree').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('place').value = '';
+
+        // Add an event listener to the trash icon to delete the corresponding list item
+        const deleteIcon = listItem.querySelector('.delete');
+        deleteIcon.addEventListener('click', function () {
+            educationList.removeChild(listItem);
+        });
+    });
+
+    // JavaScript to handle adding new experience
+    const experienceList = document.getElementById('experience-list');
+    const addExperienceForm = document.getElementById('add-experience-form');
+
+    addExperienceForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const position = document.getElementById('position').value;
+        const description = document.getElementById('description').value;
+        const expDate = document.getElementById('exp-date').value;
+        const expPlace = document.getElementById('exp-place').value;
+
+        // Create a new list item for the experience and append it to the experience list
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${position}, ${expDate}, ${expPlace} <i class="fa-solid fa-trash-can fa-lg delete"></i>`;
+        experienceList.appendChild(listItem);
+
+        // Clear the form inputs
+        document.getElementById('position').value = '';
+        document.getElementById('exp-date').value = '';
+        document.getElementById('exp-place').value = '';
+
+        // Add an event listener to the trash icon to delete the corresponding list item
+        const deleteIcon = listItem.querySelector('.delete');
+        deleteIcon.addEventListener('click', function () {
+            experienceList.removeChild(listItem);
+        });
+    });
+
+    // JavaScript to handle adding new projects
+    const projectsList = document.getElementById('projects-list');
+    const addProjectForm = document.getElementById('add-project-form');
+
+    addProjectForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const projectName = document.getElementById('project-name').value;
+        const projectDescription = document.getElementById('project-description').value;
+
+        // Create a new list item for the project and append it to the projects list
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${projectName}, ${projectDescription} <i class="fa-solid fa-trash-can fa-lg delete"></i>`;
+        projectsList.appendChild(listItem);
+
+        // Clear the form inputs
+        document.getElementById('project-name').value = '';
+        document.getElementById('project-description').value = '';
+
+        // Add an event listener to the trash icon to delete the corresponding list item
+        const deleteIcon = listItem.querySelector('.delete');
+        deleteIcon.addEventListener('click', function () {
+            projectsList.removeChild(listItem);
+        });
+    });
+
+    // Add event listeners to existing trash icons to delete them
+    const existingDeleteIcons = document.querySelectorAll('.delete');
+    existingDeleteIcons.forEach((deleteIcon) => {
+        deleteIcon.addEventListener('click', function () {
+            const listItem = deleteIcon.parentElement;
+            const list = listItem.parentElement;
+            list.removeChild(listItem);
+        });
+    });
+</script>
+
+</body>
+</html>
