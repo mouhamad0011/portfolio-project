@@ -93,135 +93,118 @@
     <div class="About">
             <h2>About</h2>
             <div class="imgcontainer">
-                <img src="https://image.shutterstock.com/image-vector/dotted-spiral-vortex-royaltyfree-images-600w-2227567913.jpg" class="picture"/>
-                <i class="fa-solid fa-plus"></i>
+                <img src="https://image.shutterstock.com/image-vector/dotted-spiral-vortex-royaltyfree-images-600w-2227567913.jpg" class="picture" id="profile-photo"/>
+                <i class="fa-solid fa-plus" id="upload-icon"></i>
+                <input type="file" id="file-upload" style="display: none;" accept="image/*">
             </div>
             <div class="description">
-                <p>As a recent graduate with a passion for Full Stack Web Development,
+                <p id="about-description">As a recent graduate with a passion for Full Stack Web Development,
                  I am eager to launch my career in this exciting field. 
                 Through my studies and practical experience, I have gained a deep understanding 
                 of the full stack web development process and am skilled in creating dynamic,
                  user-friendly web applications. I have experience collaborating with teams, 
-                 working under tight deadlines, and delivering projects to a high standard.</p>
+                 working under tight deadlines, and delivering projects to a high standard.
+                 <i class="fa-sharp fa-solid fa-square-pen" id="pencil"></i>
+                </p>
+                
             </div>
+    </div>
+    <div class="Skills">
+        <h1 class="atitle">My <span>Tech Stack </span></h1>
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="html5.svg" alt="Image 1">
+                <p>HTML</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="css3.svg" alt="Image 2">
+                <p>CSS</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="file-type-js.svg" alt="Image 3">
+                <p>JavaScript</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="php.svg" alt="Image 4">
+                <p>PHP</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="nodejs.svg" alt="Image 5">
+                <p>Node JS</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="react-fill.svg" alt="Image 6">
+                <p>React</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="express.svg" alt="Image 7">
+                <p>Express</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+        </div>
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="scrumalliance.svg" alt="Image 8">
+                <p>Scrum</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="laravel.svg" alt="Image 9">
+                <p>Laravel</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="bootstrap.svg" alt="Image 10">
+                <p>BootStrap</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="wordpress.svg" alt="Image 11">
+                <p>WordPress</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="linux.svg" alt="Image 12">
+                <p>Linux</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="id-management.svg" alt="Image 13">
+                <p>Project <br>Management</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="sql-query.svg" alt="Image 14">
+                <p>SQL</p>
+                <i class="fa-solid fa-trash-can fa-lg delete"></i>
+            </div>
+            <div class="image-item">
+                <img src="plus.jpg" alt="">
+                <p>Add more</p>
+            </div>
+        </div>
+        
     </div>
 </div>
 
-
-
-<script>
-    // JavaScript for dropdown functionality
-    const dropdownLinks = document.querySelectorAll('.sidebar .dropdown-content');
-    const contentSections = document.querySelectorAll('.content > div');
-
-    for (const link of dropdownLinks) {
-        link.previousElementSibling.addEventListener('click', function () {
-            // Hide all content sections
-            contentSections.forEach((section) => {
-                section.style.display = 'none';
-            });
-
-            link.style.display = link.style.display === 'block' ? 'none' : 'block';
-            const sectionClassName = link.previousElementSibling.textContent.trim();
-            const section = document.querySelector(`.${sectionClassName}`);
-            if (section) {
-                section.style.display = 'block';
-            }
-        });
-    }
-    // JavaScript to handle adding new education
-    const educationList = document.getElementById('education-list');
-    const addEducationForm = document.getElementById('add-education-form');
-
-    addEducationForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const degree = document.getElementById('degree').value;
-        const date = document.getElementById('date').value;
-        const place = document.getElementById('place').value;
-
-        // Create a new list item for the education and append it to the education list
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `${degree}, ${date}, ${place} <i class="fa-solid fa-trash-can fa-lg delete"></i>`;
-        educationList.appendChild(listItem);
-
-        // Clear the form inputs
-        document.getElementById('degree').value = '';
-        document.getElementById('date').value = '';
-        document.getElementById('place').value = '';
-
-        // Add an event listener to the trash icon to delete the corresponding list item
-        const deleteIcon = listItem.querySelector('.delete');
-        deleteIcon.addEventListener('click', function () {
-            educationList.removeChild(listItem);
-        });
-    });
-
-    // JavaScript to handle adding new experience
-    const experienceList = document.getElementById('experience-list');
-    const addExperienceForm = document.getElementById('add-experience-form');
-
-    addExperienceForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const position = document.getElementById('position').value;
-        const description = document.getElementById('description').value;
-        const expDate = document.getElementById('exp-date').value;
-        const expPlace = document.getElementById('exp-place').value;
-
-        // Create a new list item for the experience and append it to the experience list
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `${position}, ${expDate}, ${expPlace} <i class="fa-solid fa-trash-can fa-lg delete"></i>`;
-        experienceList.appendChild(listItem);
-
-        // Clear the form inputs
-        document.getElementById('position').value = '';
-        document.getElementById('exp-date').value = '';
-        document.getElementById('exp-place').value = '';
-
-        // Add an event listener to the trash icon to delete the corresponding list item
-        const deleteIcon = listItem.querySelector('.delete');
-        deleteIcon.addEventListener('click', function () {
-            experienceList.removeChild(listItem);
-        });
-    });
-
-    // JavaScript to handle adding new projects
-    const projectsList = document.getElementById('projects-list');
-    const addProjectForm = document.getElementById('add-project-form');
-
-    addProjectForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const projectName = document.getElementById('project-name').value;
-        const projectDescription = document.getElementById('project-description').value;
-
-        // Create a new list item for the project and append it to the projects list
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `${projectName}, ${projectDescription} <i class="fa-solid fa-trash-can fa-lg delete"></i>`;
-        projectsList.appendChild(listItem);
-
-        // Clear the form inputs
-        document.getElementById('project-name').value = '';
-        document.getElementById('project-description').value = '';
-
-        // Add an event listener to the trash icon to delete the corresponding list item
-        const deleteIcon = listItem.querySelector('.delete');
-        deleteIcon.addEventListener('click', function () {
-            projectsList.removeChild(listItem);
-        });
-    });
-
-    // Add event listeners to existing trash icons to delete them
-    const existingDeleteIcons = document.querySelectorAll('.delete');
-    existingDeleteIcons.forEach((deleteIcon) => {
-        deleteIcon.addEventListener('click', function () {
-            const listItem = deleteIcon.parentElement;
-            const list = listItem.parentElement;
-            list.removeChild(listItem);
-        });
-    });
-</script>
-
+<!-- this is a -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-popup" id="close-popup">&times;</span>
+        <h2>Add a New Skill</h2>
+        <form id="add-skill-form">
+            <input type="file" id="image-upload" accept="image/*" required>
+            <input type="text" id="skill-name" placeholder="Skill Name" required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>
+<script src="index.js"></script>
 </body>
 </html>
