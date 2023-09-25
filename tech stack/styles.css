@@ -33,7 +33,9 @@ span{
     border-width: 500px;
     
 }
-
+.image-item:hover{
+    transform: scale(1.5);
+}
 .image-item p {
     margin-top: 5px;
     font-size: 18px;
