@@ -55,9 +55,46 @@ function EducationExperience() {
           </div>
     
           <div className="wrapper" id="educationSection">
-            
+          <div class="wrapper" id="educationSection">
+        <div class="center-line">
+          <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
+        </div>
+        <div class="row row-1">
+          <section>
+            <img src="./asset/education-svgrepo-com.svg"  class="icon"/>
+            <div class="details">
+              <span class="title_education">Full-Stack Web Developer</span>
+              <span class="date_education">June 2023</span>
+              <span class="place_education">Codi</span>
+            </div>
+          </section>
+        </div>
+        
+        <div class="row row-2">
+          <section>
+            <i class="icon"></i>
+            <div class="details">
+              <span class="title_master">Master of Science in Mechanical Engineering</span>
+              <span class="master-date-place_education">June 2019 </span>
+              <span class="master-date-place_education">Lebanese International University</span>
+            </div>
+          </section>
+        </div>
+        
+        <div class="row row-1">
+          <section>
+            <i class="icon"></i>
+            <div class="details">
+              <span class="title_education">Bachelor of Science in Mechanical Engineering</span>
+              <span class="date_education">June 2017</span>
+              <span class="place_education">Lebanese International University</span>
+            </div>
+          </section>
+        </div>
+      </div>
           </div>
-    
+
+          {/* experience section */}
           <div className="wrapper" id="experienceSection" style={{ display: 'none' }}>
           <div class="center-line">
           <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
