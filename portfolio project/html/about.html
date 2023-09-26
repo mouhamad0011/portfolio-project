@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/about.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="jihane">
+            <h1 class="Jihanname">Jihan Shamas</h1>
+        </div>
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="navoptions" id="navoptions">
+            <ul class="nav-list">
+                <li><a href="#" class="navelements">About</a></li>
+                <li><a href="#" class="navelements">Education</a></li>
+                <li><a href="#" class="navelements">Experience</a></li>
+                <li><a href="#" class="navelements">Skills</a></li>
+                <li><a href="#" class="navelements">Projects</a></li>
+                <li><a href="#" class="navelements">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!--about div-->
+
+    <div class="aboutmain">
+        <div class="aboutdiv1">
+            <h3 style="font-size: 35px; color: aliceblue;">About <span style="color: #68E0CF;">me</span></h3>
+            <div class="imgcontainer"><img src="../images/mmm.jpg" class="picture" /></div>
+            <button id="downloadButton" class="downloadcv">
+                <div><img src="../images/download-svgrepo-com_1.svg" class="logo2"/></div> download cv
+              </button>
+                      </div>
+        <div class="aboutdiv2">
+            <div class="background">
+                <p class="textdesign">As a recent graduate with a passion for Full Stack Web Development,
+                    I am eager to launch my career in this exciting field.
+                    Through my studies and practical experience, I have gained a deep understanding
+                    of the full stack web development process and am skilled in creating dynamic,
+                    user-friendly web applications. I have experience collaborating with teams,
+                    working under tight deadlines, and delivering projects to a high standard.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var downloadButton = document.getElementById("downloadButton");
+        downloadButton.addEventListener("click", function() {
+          window.location.href = "file:///C:/Users/CompuTop/Desktop/New%20folder/Jihan%20Shamas-Resume.pdf";
+        });
+      </script>
+
+
+<script>
+    // Toggle the navigation menu when the hamburger icon is clicked
+    var hamburger = document.getElementById("hamburger");
+    var navoptions = document.getElementById("navoptions");
+
+    hamburger.addEventListener("click", function () {
+        navoptions.classList.toggle("show");
+    });
+</script>
+</body>
+
+</html>
