@@ -1,11 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import EducationExperience from './Components/EducationExperience';
+import EduExp from './Components/EduExp';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+const[data,setData] = useState([])
+
+const fetchData = () => {
+  fetch('http://localhost:5000/education/getAll')
+  .then ((response)=> response.json())
+  .then((data)=>setData(data.data))
+  .catch((error)=>console.log(error));
+};
+
+useEffect(()=>{
+  fetchData()
+},[])
   return (
     <div className="App">
-      <EducationExperience></EducationExperience>
+    {data.map((EduExp)=>{
+      <EduExp
+      degree={EduExp.degree}
+      date={EduExp.date}
+      place={EduExp.place}
+      />
+    })}
     </div>
   );
 }
